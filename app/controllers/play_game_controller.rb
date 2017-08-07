@@ -12,6 +12,7 @@ class PlayGameController < ApplicationController
     @grid = params[:grid]
     @start_time = DateTime.parse(params[:start_time])
     @end_time = Time.now
+
     @word = params[:word]
     @time = calc_time(@start_time, @end_time)
     @score = calc_score(@word, @grid, @start_time, @end_time)
@@ -74,15 +75,15 @@ class PlayGameController < ApplicationController
     end
   end
 
-  def run_game(attempt, grid, start_time, end_time)
-    # TODO: runs the game and return detailed hash of result
-    return {
-      time: calc_time(start_time, end_time),
-      translation: "plus tard",
-      score: calc_score(attempt, grid, start_time, end_time),
-      message: le_message(attempt.upcase, grid)
-    }
-  end
+  # def run_game(attempt, grid, start_time, end_time)
+  #   # TODO: runs the game and return detailed hash of result
+  #   return {
+  #     time: calc_time(start_time, end_time),
+  #     translation: "plus tard",
+  #     score: calc_score(attempt, grid, start_time, end_time),
+  #     message: le_message(attempt.upcase, grid)
+  #   }
+  # end
 
 end
 

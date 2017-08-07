@@ -1,11 +1,17 @@
-<h1>******** Welcome to the longest word-game!********</h1>
-<h2>"Here is your grid:"</h2>
-<p><%= @letters %></p>
 
-<h2>What's your best shot?</h2>
-<form action="/result" method="get">
-  <input type="text" name="word" placeholder="Enter your word">
-  <input type="submit" class="btn btn-primary">
-  <input type="hidden" name="grid" value="<%= @grid %>">
-  <input type="hidden" name="start_time" value="<%= Time.now %>">
-</form>
+<div class="container text-align">
+  <h1>Welcome to the longest word-game!</h1>
+  <h2>Here is your grid:</h2>
+  <h3><%= @letters %></h3>
+  <%= link_to "New letters", ask_path %>
+  <h2>What's your best shot?</h2>
+  <form action="/result" method="get">
+    <div class="from-group form-inline">
+      <input type="text" class="form-control mon_mot text-align" name="word" placeholder="Enter your word">
+      <input type="submit" class="btn btn-primary">
+      <input type="hidden" name="grid" value="<%= @grid %>">
+      <input type="hidden" name="start_time" value="<%= Time.now %>">
+    </div>
+  </form>
+</div>
+

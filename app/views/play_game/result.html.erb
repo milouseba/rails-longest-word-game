@@ -1,7 +1,9 @@
-<h1>Results</h1>
 
-
-<p>Your word: <%= @word %></p>
-<p>Time Taken to answer: <%= @time %></p>
-<p>Your score: <%= @score %></p>
-<p>Message: <%= @message %></p>
+<div class="container">
+  <h1>Results</h1>
+  <h2>Your score: <%= @score %></h2>
+  <h3>Your word: <%= @word %></h3>
+  <p>Time Taken to answer: <%= @time %></p>
+  <p>Message: <%= @message %></p>
+  <%= link_to "Play again", ask_path %>
+</div>
